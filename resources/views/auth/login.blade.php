@@ -47,7 +47,7 @@
     <div class="d-flex flex-column flex-column-fluid align-items-center justify-content-center p-4">
         <div class="col-12 text-center">
             <a href="{{ route('landing-home') }}" class="image mb-7 mb-sm-10">
-                <img alt="Logo" src="{{ asset($settingValue['app_logo']['value']) }}" class="img-fluid logo-fix-size">
+                <img alt="Logo" src="{{ asset($settingValue['app_logo']['value']) }}" class="img-fluid" style="width: 300px!important;">
             </a>
         </div>
         <div class="bg-theme-white rounded-15 shadow-md width-540 px-5 px-sm-7 py-10 mx-auto">
@@ -105,6 +105,73 @@
                 </div>
             </form>
         </div>
+
     </div>
     <!--end::Authentication - Sign-in -->
+
+    <div class="container mt-10">
+    <div class="row">
+        <div class="col-12">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-9 col-12 all-btns my-5">
+                    <div class="row text-uppercase">
+                        <div class="col-md-4 col-lg-3 mb-4 col-6 ">
+                            <a 
+                            data-user="admin@vidyagxp.com"
+                            data-password="123456789"
+                            class="btn btn-danger superadmin-login accountLoginBtn">super admin</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a 
+                            data-user="hospital@vidyagxp.com"
+                            data-password="123456789"
+                            class="btn btn-success admin-login accountLoginBtn">hospital admin</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a 
+                            data-user="amit@vidyagxp.com"
+                            data-password="password"
+                            class="btn btn-warning doctor-login accountLoginBtn">doctor</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a class="btn btn-primary accountant-login accountLoginBtn">accountant</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a class="btn btn-info cas-handler-login accountLoginBtn">case handler</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a class="btn btn-warning receptionist-login accountLoginBtn">receptionist</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a class="btn btn-info pharmacist-login accountLoginBtn">pharmacist</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a class="btn btn-danger lab-technician-login accountLoginBtn">lab technician</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a class="btn btn-success nurse-login accountLoginBtn">nurse</a>
+                        </div>
+                        <div class="col-md-4 col-lg-3 mb-4 col-6">
+                            <a class="btn btn-danger patient-login accountLoginBtn">patient</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $('.accountLoginBtn').click(function() {
+            const user = $(this).data('user');
+            const pass = $(this).data('password')
+
+            $('#formInputEmail').val(user)
+            $('#formInputPassword').val(pass)
+
+        })
+    })
+</script>
 @endsection
